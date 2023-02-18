@@ -37,6 +37,7 @@ public class Gmail extends Email {
     public void deleteMail(String message){
         // Each message is distinct
         // If the given message is found in any mail in the inbox, move the mail to trash, else do nothin
+        if(indbox.size()==0) return;
         int a=0;
         boolean flag=false;
         for(int i=0;i<indbox.size();i++){
