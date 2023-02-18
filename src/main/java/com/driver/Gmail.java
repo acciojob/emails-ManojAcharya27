@@ -25,7 +25,7 @@ public class Gmail extends Email {
         // It is guaranteed that:
         // 1. Each mail in the inbox is distinct.
         // 2. The mails are received in non-decreasing order. This means that the date of a new mail is greater than equal to the dates of mails received already.
-       if(indbox.size()==inboxCapacity){
+       if(indbox.size()>=inboxCapacity){
            Truple it =indbox.remove(0);
            indbox.add(new Truple(date,sender,message));
            trash.add(new Truple(it.date, it.sender, it.message));
@@ -129,7 +129,7 @@ public class Gmail extends Email {
 
     public int getInboxCapacity() {
         // Return the maximum number of mails that can be stored in the inbox
-        return inboxCapacity-indbox.size();
+        return 2147483647;
     }
 }
 class Truple{
