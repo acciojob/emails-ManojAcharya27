@@ -48,6 +48,7 @@ public class Gmail extends Email {
         Truple it;
         if(flag){
             it=indbox.get(a);
+            indbox.remove(a);
             trash.add(new Truple(it.date, it.sender,it.message));
         }
 
@@ -76,6 +77,7 @@ public class Gmail extends Email {
         //It is guaranteed that start date <= end date
         Format formatter = new SimpleDateFormat("dd/MM/yyyy");
         String s = formatter.format(start);
+     //   System.out.println(s);
         String  s2=formatter.format(end);
         int a=0;
         for(int i=0;i<2;i++){
