@@ -77,7 +77,7 @@ public class Gmail extends Email {
         //It is guaranteed that start date <= end date
         Format formatter = new SimpleDateFormat("dd/MM/yyyy");
         String s = formatter.format(start);
-     //   System.out.println(s);
+        //System.out.println(s);
         String  s2=formatter.format(end);
         int a=0;
         for(int i=0;i<2;i++){
@@ -92,12 +92,20 @@ public class Gmail extends Email {
             b=b*10+n;
         }
         int ans=0;
-        while(a<=b){
-            ans++;
-            a++;
-        }
-        return  ans;
-
+            for(int i=0;i<indbox.size();i++){
+                Truple it=indbox.get(i);
+                String date=formatter.format(it.date);
+                int val=0;
+                for(int j=0;j<2;j++){
+                    char c=s2.charAt(j);
+                    int n=Character.getNumericValue(c);
+                    val=val*10+n;
+                }
+                if(val>=a&&val<=b) {
+                    ans++;
+                }
+            }
+            return ans;
 
     }
 
