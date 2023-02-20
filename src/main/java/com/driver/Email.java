@@ -5,11 +5,11 @@ public class Email {
     private String emailId;
     private String password;
 
-    private  boolean length;
-    private  boolean upperCase;
-    private boolean lowerCase;
-    private boolean digit;
-    private  boolean splChar;
+    private  boolean length=false;
+    private  boolean upperCase=false;
+    private boolean lowerCase=false;
+    private boolean digit=false;
+    private  boolean splChar=false;
 
     public Email(String emailId){
         this.emailId = emailId;

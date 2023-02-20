@@ -115,7 +115,7 @@ public class Gmail extends Email {
                 ans++;
             }
         }
-        return ans+1;
+        return ans;
     }
 
     public int getInboxSize(){
