@@ -20,7 +20,9 @@ public class Email {
         return emailId;
     }
 
-
+    public String getPassword() {
+        return password;
+    }
 
 
     public void changePassword(String oldPassword, String newPassword){
