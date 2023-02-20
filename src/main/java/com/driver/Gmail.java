@@ -76,7 +76,7 @@ public class Gmail extends Email {
     public int findMailsBetweenDates(Date start, Date end){
         //find number of mails in the inbox which are received between given dates
         //It is guaranteed that start date <= end date
-        Format formatter = new SimpleDateFormat("dd/MM/yyyy");
+       /* Format formatter = new SimpleDateFormat("dd/MM/yyyy");
         String s = formatter.format(start);
         //System.out.println(s);
         String  s2=formatter.format(end);
@@ -108,6 +108,14 @@ public class Gmail extends Email {
             }
             return ans;
 
+*/
+        int ans=0;
+        for(int i=0;i<indbox.size();i++){
+            if(indbox.get(i).date.compareTo(start)>=0&&indbox.get(i).date.compareTo(end)<=0){
+                ans++;
+            }
+        }
+        return ans+1;
     }
 
     public int getInboxSize(){
@@ -130,7 +138,7 @@ public class Gmail extends Email {
 
     public int getInboxCapacity() {
         // Return the maximum number of mails that can be stored in the inbox
-        return Integer.MAX_VALUE;
+        return this.inboxCapacity;
     }
 }
 class Truple{
