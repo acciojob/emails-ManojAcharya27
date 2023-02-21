@@ -32,28 +32,23 @@ public class Email {
         // 4. It contains at least one digit
         // 5. It contains at least one special character. Any character apart from alphabets and digits is a special character
         if(oldPassword.equals(password)){
-            if(newPassword.length()>=8){
-                length=true;
-            }
-            for(int i=0;i<newPassword.length();i++) {
-                char ch = newPassword.charAt(i);
-                if (ch >= '0' && ch <= '9') {
-                    digit = true;
-                } else if (ch >= 'A' && ch <= 'Z') {
-                    upperCase = true;
-                } else if (ch >= 'a' && ch <= 'z') {
-                    lowerCase = true;
-                }else {
-                    splChar=true;
-                }
-            }
-            if(length&&digit&&upperCase&&lowerCase&&splChar) {
+
+            if(isValid(newPassword)){
                 this.password=newPassword;
-            }
+            }else return;
         }
 
-
-
-
+    }
+    public boolean isValid(String temp){
+        if(temp.length()>=8) this.length=true;
+        for (int i=0;i<temp.length();i++){
+            char c=temp.charAt(i);
+            if(c>='0'&&c<='9') digit=true;
+            else if(c>='A'&&c<='Z') upperCase=true;
+            else if(c>='a'&&c<='z') lowerCase=true;
+            else splChar=true;
+        }
+        if(splChar&&lowerCase&&length&&upperCase&&digit) return true;
+        return false;
     }
 }
