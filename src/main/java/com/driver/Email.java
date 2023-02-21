@@ -19,8 +19,6 @@ public class Email {
     public String getEmailId() {
         return emailId;
     }
-
-
     public String getPassword() {
         return password;
     }
