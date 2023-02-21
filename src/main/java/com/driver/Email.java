@@ -20,7 +20,7 @@ public class Email {
         return emailId;
     }
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
 

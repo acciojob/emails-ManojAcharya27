@@ -44,6 +44,7 @@ public class Gmail extends Email {
             if(indbox.get(i).message.equals(message)){
                 a=i;
                 flag=true;
+                break;
             }
         }
         Truple it;
