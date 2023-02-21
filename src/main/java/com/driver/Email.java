@@ -45,7 +45,7 @@ public class Email {
                     upperCase = true;
                 } else if (ch >= 'a' && ch <= 'z') {
                     lowerCase = true;
-                }else if(ch>='!'&&ch<='/'){
+                }else {
                     splChar=true;
                 }
             }
