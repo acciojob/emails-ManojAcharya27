@@ -23,6 +23,53 @@ public class Email {
         return this.password;
     }
 
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isLength() {
+        return length;
+    }
+
+    public void setLength(boolean length) {
+        this.length = length;
+    }
+
+    public boolean isUpperCase() {
+        return upperCase;
+    }
+
+    public void setUpperCase(boolean upperCase) {
+        this.upperCase = upperCase;
+    }
+
+    public boolean isLowerCase() {
+        return lowerCase;
+    }
+
+    public void setLowerCase(boolean lowerCase) {
+        this.lowerCase = lowerCase;
+    }
+
+    public boolean isDigit() {
+        return digit;
+    }
+
+    public void setDigit(boolean digit) {
+        this.digit = digit;
+    }
+
+    public boolean isSplChar() {
+        return splChar;
+    }
+
+    public void setSplChar(boolean splChar) {
+        this.splChar = splChar;
+    }
 
     public void changePassword(String oldPassword, String newPassword){
         //Change password only if the oldPassword is equal to current password and the new password meets all of the following:
@@ -34,7 +81,7 @@ public class Email {
         if(oldPassword.equals(password)){
 
             if(isValid(newPassword)){
-                this.password=newPassword;
+                setPassword(newPassword);
             }else return;
         }
 
